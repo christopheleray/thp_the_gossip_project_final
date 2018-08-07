@@ -1,0 +1,20 @@
+<h1>Gossip list:</h1>
+
+  <div class="container">
+
+  <% @gossip.each do |gossip| %>
+  <table >
+    <tr>
+      <th>Content</th>
+      <td><%= gossip.content %></td>
+      <th>Gossiper</th>
+      <td><%= gossip.user_id %></td>
+      <td><%= link_to 'Delete', '#', method: :delete %></td>
+      <td><%= link_to 'Show', '#' %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>
+<div class='container'>
+  <a href="<%= new_gossip_path %>" class= 'btn btn-warning'>Créer</a>
+</div> 

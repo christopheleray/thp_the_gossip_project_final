@@ -11,3 +11,4 @@ User.delete_all
 Gossip.delete_all
 
 user = User.create(username: "Bob", email: "bob@lebricoleur.com", password: "azerty")
+gossip = Gossip.create(content: "Je suis une patate")
