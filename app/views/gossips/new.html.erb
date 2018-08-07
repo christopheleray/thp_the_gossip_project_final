@@ -1,0 +1,10 @@
+<h1>Create your gossip</h1>
+
+<%= form_for @gossip do |f| %>
+    <div class="form-group">
+      <label>What is your gossip ? </label>
+        <%= f.text_area :content, class: 'form-control', placeholder: 'Your gossip' %>
+    </div>
+      <button type="submit" class="btn btn-primary">Validate</button>
+    </div>
+ <% end %>
