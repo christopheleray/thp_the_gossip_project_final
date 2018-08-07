@@ -16,7 +16,7 @@ class GossipsController < ApplicationController
     @gossip = Gossip.new(gossip_params)
     @gossip.user_id = current_user.id
 		if @gossip.save
-			redirect_to rooth_path
+			redirect_to root_path
 		else
 			render 'new'
 		end

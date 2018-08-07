@@ -8,7 +8,7 @@
       <th>Content</th>
       <td><%= gossip.content %></td>
       <th>Gossiper</th>
-      <td><%= gossip.user_id %></td>
+      <td><%= User.find(gossip.user_id).username %></td>
       <td><%= link_to 'Delete', '#', method: :delete %></td>
       <td><%= link_to 'Show', '#' %></td>
     </tr>
