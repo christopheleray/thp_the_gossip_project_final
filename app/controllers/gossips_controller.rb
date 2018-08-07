@@ -16,7 +16,7 @@ class GossipsController < ApplicationController
     @gossip = Gossip.new(gossip_params)
     @gossip.user_id = current_user.id
 		if @gossip.save
-			redirect_to root_path
+			redirect_to gossips_path
 		else
 			render 'new'
 		end
@@ -25,8 +25,12 @@ class GossipsController < ApplicationController
 	def destroy
 		@gossip = Gossip.find(params[:id])
 		@gossip.destroy
-		redirect_to root_path
+		redirect_to gossips_path
 	end
+
+  def show
+  end
+
 
 	private
 	def gossip_params
