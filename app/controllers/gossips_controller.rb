@@ -1,6 +1,6 @@
 class GossipsController < ApplicationController
   before_action :authenticate_user!
-  
+
 	def index
 		@gossip = Gossip.all
 	end
@@ -26,6 +26,11 @@ class GossipsController < ApplicationController
 
 	def destroy
 		@gossip = Gossip.find(params[:id])
+    unless @gossip.user_id == current_user.id
+      flash[:alert] = "This gossips does not belong to you"
+      redirect_to gossips_path
+      return false
+    end
 		@gossip.destroy
 		redirect_to gossips_path
 	end
