@@ -10,11 +10,11 @@
       <th>Gossiper</th>
       <td><%= User.find(gossip.user_id).username %></td>
       <td><%= link_to 'Delete', '#', method: :delete %></td>
-      <td><%= link_to 'Show', '#' %></td>
+      <td><%= link_to 'Show', gossips_path(gossip) %></td>
     </tr>
   </table>
   <% end %>
 </div>
 <div class='container'>
-  <a href="<%= new_gossip_path %>" class= 'btn btn-warning'>Créer</a>
+  <a href="<%= '#' %>" class= 'btn btn-warning'>Créer</a>
 </div> 
