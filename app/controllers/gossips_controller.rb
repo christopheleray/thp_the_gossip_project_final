@@ -12,9 +12,11 @@ class GossipsController < ApplicationController
 	def create
 		puts "j'affiche le create"
 		puts params.inspect
-		@gossip = Gossip.new(gossip_params, user_id: 2)
+	#@gossip = Gossip.new(content: params[:gossip][:content], user_id: current_user.id)
+    @gossip = Gossip.new(gossip_params)
+    @gossip.user_id = current_user.id
 		if @gossip.save
-			#redirect_to gossip_create_path
+			redirect_to rooth_path
 		else
 			render 'new'
 		end
