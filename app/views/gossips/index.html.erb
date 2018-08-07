@@ -10,7 +10,7 @@
       <th>Gossiper</th>
       <td><%= User.find(gossip.user_id).username %></td>
       <td><%= link_to 'Delete', gossip, data: { confirm: "Are you sure?" }, method: :delete %></td>
-      <td><%= link_to 'Show', gossips_path(gossip) %></td>
+      <td><%= link_to 'Show', gossips_path(gossip.id)%></td>
     </tr>
   </table>
   <% end %>
